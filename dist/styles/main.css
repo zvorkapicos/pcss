@@ -22,6 +22,10 @@
 
 /* Breakpoints */
 
+/* Transition */
+
+/* Center main container */
+
 html {
   font-size: 16px;
   line-height: 1.5;
@@ -96,13 +100,13 @@ header .header-top-bar {
     border-bottom: 1px solid var(--color-gray);
   }
 
-header .header-top-bar__container {
+header .container {
     max-width: 1200px
   }
 
 @media (min-width: 1024px) {
 
-header .header-top-bar__container {
+header .container {
       display: block;
       margin: auto
   }
@@ -141,27 +145,63 @@ header .header-top-bar__items {
       }
     }
 
+header .header-top-bar__items .dropdown-toggle::after {
+      display: inline-block;
+      vertical-align: middle;
+      content: "\f078";
+      font-family: "FontAwesome";
+      font-family: var(--ico-font);
+      font-size: 0.5625rem;
+      line-height: 1.5rem;
+      margin-left: 0.375rem;
+      -webkit-transition-timing-function: ease-out;
+           -o-transition-timing-function: ease-out;
+              transition-timing-function: ease-out;
+      -webkit-transition-duration: 250ms;
+           -o-transition-duration: 250ms;
+              transition-duration: 250ms;
+    }
+
+header .header-top-bar__items .toggle-active {
+      color: #c4122f;
+      color: var(--color-red)
+    }
+
+header .header-top-bar__items .toggle-active::after {
+        -webkit-transform: rotate(-180deg);
+            -ms-transform: rotate(-180deg);
+                transform: rotate(-180deg);
+      }
+
 header .header-top-bar__items .header-top-bar__item {
       display: inline-block;
-      margin-right: 0.75rem;
-      cursor: pointer
+      margin-right: 0.75rem
     }
+
+header .header-top-bar__items .header-top-bar__item span {
+        cursor: pointer;
+      }
 
 header .header-top-bar__items .header-top-bar__item:last-child {
         margin-right: 0;
       }
 
-header .header-top-bar__items .header-top-bar__item:nth-child(-n+2)::after {
+header .header-top-bar__items .header-top-bar__item {
+/*
+      &:nth-child(-n+2) span::after {
         content: "\f078";
-        font-family: "FontAwesome";
         font-family: var(--ico-font);
         font-size: 0.75rem;
         margin-left: 0.375rem;
       }
+*/
+    }
 
 header .header-top-bar__items .header-top-bar__item .header-top-bar__content {
         background-color: #fff;
         background-color: var(--color-white);
+        color: #001722;
+        color: var(--color-text);
         -webkit-box-shadow: 0 2px 4px rgba(0,0,0,0.3);
                 box-shadow: 0 2px 4px rgba(0,0,0,0.3);
         -webkit-box-shadow: var(--shadow);
@@ -239,5 +279,69 @@ header .header-help ul li:nth-child(3)::before {
 header .header-customer-services {
     display: none; /* Initial hide */
   }
+
+header .header-main__items {
+    margin: 0 0.75rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+
+header .header-main__navigation-toggle {
+    display: inline-block;
+    padding: 0.75rem 0.75rem 0.75rem 0
+  }
+
+@media (min-width: 1024px) {
+
+header .header-main__navigation-toggle {
+      padding: 0.75rem
+  }
+    }
+
+header .header-main__navigation-toggle .icon-menu::before {
+      content:"\f0c9";
+      font-family: "FontAwesome";
+      font-family: var(--ico-font);
+    }
+
+header .header-main__logo {
+    display: inline-block
+  }
+
+header .header-main__logo img {
+      height: 1.875rem;
+      display: inline-block;
+      vertical-align: middle;
+    }
+
+header .header-main__action {
+    display: inline-block;
+    /*padding: 0.75rem;*/
+    margin-left: auto
+    }
+
+header .header-main__action .icon-account {
+        padding: 0.75rem
+      }
+
+header .header-main__action .icon-account::before {
+        content:"\f007";
+        font-family: "FontAwesome";
+        font-family: var(--ico-font);
+        }
+
+header .header-main__action .icon-cart {
+        padding: 0.75rem 0 0.75rem 0.75rem
+      }
+
+header .header-main__action .icon-cart::before {
+        content:"\f07a";
+        font-family: "FontAwesome";
+        font-family: var(--ico-font);
+        }
 
 /*# sourceMappingURL=main.css.map */

@@ -1,0 +1,57 @@
+header {
+
+  & .header-main__items {
+    margin: 0 0.75rem;
+    display: flex;
+    align-items: center;
+  }
+
+  & .header-main__navigation-toggle {
+    display: inline-block;
+    padding: 0.75rem 0.75rem 0.75rem 0;
+
+    @media (--md) {
+      padding: 0.75rem;
+    }
+
+    & .icon-menu::before {
+      content:"\f0c9";
+      font-family: var(--ico-font);
+    }
+  }
+
+  & .header-main__logo {
+    display: inline-block;
+
+    & img {
+      height: 1.875rem;
+      display: inline-block;
+      vertical-align: middle;
+    }
+  }
+
+  & .header-main__action {
+    display: inline-block;
+    /*padding: 0.75rem;*/
+    margin-left: auto;
+
+      & .icon-account {
+        padding: 0.75rem;
+
+        &::before {
+        content:"\f007";
+        font-family: var(--ico-font);
+        }
+      }
+
+      & .icon-cart {
+        padding: 0.75rem 0 0.75rem 0.75rem;
+
+        &::before {
+        content:"\f07a";
+        font-family: var(--ico-font);
+        }
+      }
+    }
+
+}

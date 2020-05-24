@@ -10,3 +10,19 @@
 
 /* Breakpoints */
 @custom-media --md (min-width: 1024px);
+
+/* Transition */
+@define-mixin transition {
+  transition-timing-function: ease-out;
+  transition-duration: 250ms;
+}
+
+/* Center main container */
+@define-mixin container {
+  max-width: 1200px;
+
+  @media (--md) {
+    display: block;
+    margin: auto;
+  }
+}
