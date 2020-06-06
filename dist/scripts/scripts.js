@@ -1,23 +1,22 @@
-$(document).ready(function(){
+let toggleHelp = document.querySelector(".toggle-help");
+let toggleCs = document.querySelector(".toggle-customer-services");
 
-  // Topbar help dropdown
-  $(".toggle-help").click(function(){
-    $(event.currentTarget).toggleClass("toggle-active");
-    $(".header-help").slideToggle(150);
+let contentHelp = document.querySelector(".header-help");
+let contentCs = document.querySelector(".header-customer-services");
 
-  // This closes the customer services dropdown
-    $(".toggle-customer-services").removeClass("toggle-active");
-    $(".header-customer-services").slideUp(150);
-  });
+let dropHelp = (event) => {
+  toggleHelp.classList.toggle("toggle-active");
+  contentHelp.classList.toggle("active");
+  toggleCs.classList.remove("toggle-active");
+  contentCs.classList.remove("active");
+}
 
-  // Topbar customer services dropdown
-  $(".toggle-customer-services").click(function(){
-    $(event.currentTarget).toggleClass("toggle-active");
-    $(".header-customer-services").slideToggle(150);;
+let dropCs = (event) => {
+    toggleCs.classList.toggle("toggle-active");
+    contentCs.classList.toggle("active");
+    toggleHelp.classList.remove("toggle-active");
+    contentHelp.classList.remove("active");
+}
 
-  // This closes the hel dropdown
-    $(".toggle-help").removeClass("toggle-active");
-    $(".header-help").slideUp(150);
-  });
-
-});
+toggleHelp.onclick = dropHelp;
+toggleCs.onclick = dropCs;

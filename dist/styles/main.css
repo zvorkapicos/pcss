@@ -133,19 +133,19 @@ header .header-top-bar__items {
         content: "";
         background: #eff0f1;
         background: var(--color-gray);
-        width: 1.5rem;
+        width: 2rem;
         height: 100%;
         position: absolute;
         top: 0px;
         right: 0px;
-        right: -1rem;
+        right: -1.3rem;
         -webkit-transform: skew(30deg);
             -ms-transform: skew(30deg);
                 transform: skew(30deg);
       }
     }
 
-header .header-top-bar__items .dropdown-toggle::after {
+header .header-top-bar__items .dropdown-toggle span::after {
       display: inline-block;
       vertical-align: middle;
       content: "\f078";
@@ -186,17 +186,6 @@ header .header-top-bar__items .header-top-bar__item:last-child {
         margin-right: 0;
       }
 
-header .header-top-bar__items .header-top-bar__item {
-/*
-      &:nth-child(-n+2) span::after {
-        content: "\f078";
-        font-family: var(--ico-font);
-        font-size: 0.75rem;
-        margin-left: 0.375rem;
-      }
-*/
-    }
-
 header .header-top-bar__items .header-top-bar__item .header-top-bar__content {
         background-color: #fff;
         background-color: var(--color-white);
@@ -235,6 +224,10 @@ header .header-top-bar__items .header-top-bar__item .header-top-bar__content>ul>
 header .header-top-bar__items .header-top-bar__item .header-top-bar__content>ul>li:last-child {
               margin-bottom: 0;
             }
+
+header .header-top-bar__items .active {
+      display: block;
+    }
 
 header .header-help {
     display: none /* Initial hide */
@@ -279,6 +272,8 @@ header .header-help ul li:nth-child(3)::before {
 header .header-customer-services {
     display: none; /* Initial hide */
   }
+
+/* UTILITY */
 
 header .header-main__items {
     margin: 0 0.75rem;
