@@ -1,3 +1,30 @@
+let dropdowns = Array.from(document.getElementsByClassName("dropdown-toggle"));
+
+let headerHelp = dropdowns[0];
+let headerCs = dropdowns[1];
+
+let showDropdown = (event) => {
+  let dropdownActive = event.target;
+  for (let i = 0; i < dropdowns.length; i++) {
+    dropdowns[i].classList.remove("toggle-active");
+
+    if (dropdownActive) {
+      dropdownActive.classList.add("toggle-active");
+    }
+  }
+/*
+  dropdowns.forEach(dropdownsItem => {
+    dropdownsItem.classList.remove("toggle-active");
+  });
+*/
+//  event.target.classList.toggle("toggle-active");
+};
+
+headerHelp.onclick = showDropdown;
+headerCs.onclick = showDropdown;
+
+/*
+
 let toggleHelp = document.querySelector(".toggle-help");
 let toggleCs = document.querySelector(".toggle-customer-services");
 
@@ -20,3 +47,5 @@ let dropCs = (event) => {
 
 toggleHelp.onclick = dropHelp;
 toggleCs.onclick = dropCs;
+
+*/
