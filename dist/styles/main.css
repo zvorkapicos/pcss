@@ -142,10 +142,11 @@ header .header-top-bar__items {
         -webkit-transform: skew(30deg);
             -ms-transform: skew(30deg);
                 transform: skew(30deg);
+        z-index: -1;
       }
     }
 
-header .header-top-bar__items .dropdown-toggle ::after {
+header .header-top-bar__items .dropdown-toggle::after {
       display: inline-block;
       vertical-align: middle;
       content: "\f078";
@@ -167,7 +168,7 @@ header .header-top-bar__items .toggle-active {
       color: var(--color-red)
     }
 
-header .header-top-bar__items .toggle-active ::after {
+header .header-top-bar__items .toggle-active::after {
         -webkit-transform: rotate(-180deg);
             -ms-transform: rotate(-180deg);
                 transform: rotate(-180deg);
