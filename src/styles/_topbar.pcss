@@ -37,7 +37,7 @@ header {
       }
     }
 
-    & .dropdown-toggle span::after {
+    & .dropdown-toggle ::after {
       display: inline-block;
       vertical-align: middle;
       content: "\f078";
@@ -51,7 +51,7 @@ header {
     & .toggle-active {
       color: var(--color-red);
 
-      &::after {
+      & ::after {
         transform: rotate(-180deg);
       }
     }
