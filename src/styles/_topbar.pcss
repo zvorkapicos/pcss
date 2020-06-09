@@ -60,9 +60,10 @@ header {
     & .header-top-bar__item {
       display: inline-block;
       margin-right: 0.75rem;
+      cursor: pointer;
 
       & span {
-        cursor: pointer;
+        pointer-events: none; /* Ovim izbijam span kao event.target*/
       }
 
       &:last-child {
@@ -101,13 +102,12 @@ header {
       }
     }
 
-    & .active {
-      display: block;
-    }
   }
 
   & .header-help {
-    display: none; /* Initial hide */
+    visibility: hidden; /* Initial hide */
+    opacity: 0;
+    transition: opacity 300ms, visibility 300ms;
 
     & ul li::before {
       content: "";
@@ -142,8 +142,16 @@ header {
   }
 
   & .header-customer-services {
-    display: none; /* Initial hide */
+    visibility: hidden; /* Initial hide */
+    opacity: 0;
+    transition: opacity 300ms, visibility 300ms;
   }
+
+  & .content-visible {
+    visibility: visible;
+    opacity: 1;
+  }
+
 }
 
 /* UTILITY */

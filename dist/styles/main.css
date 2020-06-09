@@ -116,6 +116,7 @@ header .header-top-bar__items {
     background-color: #eff0f1;
     background-color: var(--color-gray);
     padding: 0.375rem 0 0.375rem 0.75rem
+
   }
 
 @media (min-width: 1024px) {
@@ -127,6 +128,7 @@ header .header-top-bar__items {
       border-left: 3px solid var(--color-red);
       margin-left: 1.5rem;
       padding-right: 0.75rem
+
   }
 
       header .header-top-bar__items::after {
@@ -176,11 +178,12 @@ header .header-top-bar__items .toggle-active::after {
 
 header .header-top-bar__items .header-top-bar__item {
       display: inline-block;
-      margin-right: 0.75rem
+      margin-right: 0.75rem;
+      cursor: pointer
     }
 
 header .header-top-bar__items .header-top-bar__item span {
-        cursor: pointer;
+        pointer-events: none; /* Ovim izbijam span kao event.target*/
       }
 
 header .header-top-bar__items .header-top-bar__item:last-child {
@@ -226,12 +229,12 @@ header .header-top-bar__items .header-top-bar__item .header-top-bar__content>ul>
               margin-bottom: 0;
             }
 
-header .header-top-bar__items .active {
-      display: block;
-    }
-
 header .header-help {
-    display: none /* Initial hide */
+    visibility: hidden; /* Initial hide */
+    opacity: 0;
+    -webkit-transition: opacity 300ms, visibility 300ms;
+    -o-transition: opacity 300ms, visibility 300ms;
+    transition: opacity 300ms, visibility 300ms
   }
 
 header .header-help ul li::before {
@@ -271,7 +274,16 @@ header .header-help ul li:nth-child(3)::before {
     }
 
 header .header-customer-services {
-    display: none; /* Initial hide */
+    visibility: hidden; /* Initial hide */
+    opacity: 0;
+    -webkit-transition: opacity 300ms, visibility 300ms;
+    -o-transition: opacity 300ms, visibility 300ms;
+    transition: opacity 300ms, visibility 300ms;
+  }
+
+header .content-visible {
+    visibility: visible;
+    opacity: 1;
   }
 
 /* UTILITY */
