@@ -41,11 +41,11 @@
       <div class= "header-main">
         <div class="container">
           <div class="header-main__items">
-            <div class="header-main__navigation-toggle"><span class="icon-menu"></span></div>
+            <button class="header-main__navigation-toggle"><span class="icon-menu"></span></button>
              <div class="header-main__logo"><a href="index.html"><img src="images/logo.svg"></a></div>
             <div class="header-main__actions">
-              <div class="header-main__actions-account"><span class="icon-account"></span></div>
-              <div class="header-main__actions-cart"><span class="icon-cart"></span></div>
+              <button class="header-main__actions-account"><span class="icon-account"></span></button>
+              <button class="header-main__actions-cart"><span class="icon-cart"></span></button>
             </div>
             <div class="header-main__search">
               <form>
@@ -56,25 +56,50 @@
           </div>
         </div>
       </div>
-      <nav class="navigation">
+      
       <div class="navigation-wrapper">
-
+        <button class="close"></button>
+        <nav class="navigation">
         <ul class="main-menu">
           <li class="main-menu-item"><a href="#">Sale</a></li>
-          <li class="main-menu-item"><a href="#">Detailing Products</a></li>
-          <li class="main-menu-item"><a href="#">Fluids & Lubricants</a></li>
-          <li class="main-menu-item"><a href="#">Tools</a></li>
-          <li class="main-menu-item"><a href="#">Maintanance</a></li>
+          <li class="main-menu-item parent"><a href="#">Detailing Products</a>
+          <ul class="main-menu-submenu">
+            <li class="main-menu-submenu-item back">Go Back</li>
+            <li class="main-menu-submenu-item">Shampoos</li>
+            <li class="main-menu-submenu-item">Sponges</li>
+            <li class="main-menu-submenu-item">Wax</li>
+          </ul>
+          </li>
+          <li class="main-menu-item parent"><a href="#">Fluids & Lubricants</a>
+            <ul class="main-menu-submenu">
+              <li class="main-menu-submenu-item back">Go Back</li>
+              <li class="main-menu-submenu-item">Oil</li>
+              <li class="main-menu-submenu-item">Coolant</li>
+              <li class="main-menu-submenu-item">Glass Cleaner</li>
+            </ul>
+          </li>
+          <li class="main-menu-item parent"><a href="#">Tools</a>
+            <ul class="main-menu-submenu">
+              <li class="main-menu-submenu-item back">Go Back</li>
+              <li class="main-menu-submenu-item">Screwdrivers</li>
+              <li class="main-menu-submenu-item">Wrenches</li>
+              <li class="main-menu-submenu-item">Grinders</li>
+            </ul>
+          </li>
         </ul>
-      
+      </nav>
       </div>
       <div class="navigation-overlay"></div>
-    </nav>
+    
       
     </header>
   </div> <!-- page wrapper -->
+
+  <!--Font Awesome-->
   <script src="https://kit.fontawesome.com/b336ded1fd.js" crossorigin="anonymous"></script>
-  <script src="scripts/scripts.js" type="text/javascript"></script>
+  <!--Shitload of scripts jer ne znam spakirati-->
+  <script src="scripts/header-dropdowns.js" type="text/javascript"></script>
+  <script src="scripts/main-menu.js" type="text/javascript"></script>
 </body>
 </html>
 

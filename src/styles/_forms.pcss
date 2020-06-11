@@ -11,3 +11,13 @@ input[type] {
         border: 1px solid #1da1f2;
     }
 }
+
+button {
+    background-color: transparent;
+    border: 0;
+
+    &:focus {
+        outline: 1px solid var(--color-focus);
+        box-shadow: 0 0 0.75rem var(--color-focus);;
+    }
+}
