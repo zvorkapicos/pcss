@@ -6,6 +6,7 @@
 @import "_border-box.pcss";
 @import "_variables.pcss";
 @import "_typography.pcss";
+@import "_forms.pcss";
 
 /* Block level elements */
 @import "_header.pcss";

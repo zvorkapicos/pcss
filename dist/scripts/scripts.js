@@ -1,8 +1,7 @@
 let dropdowns = Array.from(document.getElementsByClassName("dropdown-toggle"));
 
 dropdowns.forEach((item) => {
-  item.addEventListener("click", function() {
-
+  item.addEventListener("click", function () {
     // Kliknutom toggleu dodaje aktivnu klasu.
     // Ovo mora ići prvo jer u suprotnom na kraju forEacha vraća aktivnu klasu svakom (foreach jel...)
     this.classList.toggle("toggle-active");
@@ -10,13 +9,11 @@ dropdowns.forEach((item) => {
     // Ovo roštilja kroz dropdowns array i traži onaj koji nije ".this".
     // Onda njima miče aktivnu klasu.
     for (let i = 0; i < dropdowns.length; i++) {
-
       if (dropdowns[i] !== this) {
         dropdowns[i].classList.remove("toggle-active");
         //console.log(dropdowns[i].children[1]); // Tu sam provjevarao mogu li upecati child od onoga što nije "this"
         dropdowns[i].children[1].classList.remove("content-visible"); // Tu sam tom childu promjenio CSS display
       }
-
     }
 
     // Array od .this da se mogu izvući .chldren jer je .this objekt (typeof this vraća object) i ne mogu mu ući direktno sa .children.
@@ -31,14 +28,10 @@ dropdowns.forEach((item) => {
     } else {
       content[1].classList.remove("content-visible");
     }
-
-
-
   });
-
 });
 
-window.addEventListener("click", function(event) {
+window.addEventListener("click", function (event) {
   console.log(event.target); // Tu sam checkirao na što uopće klikam. Headsup - gasi pointer events na span u cssu ako brlja target
 
   //Ovo čekira da li je klik bio na .dropdown-toggle ili ne.
@@ -48,11 +41,13 @@ window.addEventListener("click", function(event) {
 
     //Ovo opet roštilja dropdowns array i content divove i sve što ima aktivne klase gasi ako event.target nije taj dropdown-toggle.
     for (let i = 0; i < dropdowns.length; i++) {
-      if (dropdowns[i].classList.contains("toggle-active") && dropdowns[i].children[1].classList.contains("content-visible")) {
+      if (
+        dropdowns[i].classList.contains("toggle-active") &&
+        dropdowns[i].children[1].classList.contains("content-visible")
+      ) {
         console.log("success");
         dropdowns[i].classList.remove("toggle-active");
         dropdowns[i].children[1].classList.remove("content-visible");
-
       }
     }
   }

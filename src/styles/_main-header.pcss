@@ -1,57 +1,87 @@
 header {
+  & .container {
+    & .header-main__items {
+      margin: 0 0.75rem;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
 
-  & .header-main__items {
-    margin: 0 0.75rem;
-    display: flex;
-    align-items: center;
-  }
+      & .header-main__navigation-toggle {
+        display: inline-block;
+        padding: 0.75rem 0.75rem 0.75rem 0;
 
-  & .header-main__navigation-toggle {
-    display: inline-block;
-    padding: 0.75rem 0.75rem 0.75rem 0;
+        @media (--md) {
+          padding: 0.75rem;
+        }
 
-    @media (--md) {
-      padding: 0.75rem;
-    }
-
-    & .icon-menu::before {
-      content:"\f0c9";
-      font-family: var(--ico-font);
-    }
-  }
-
-  & .header-main__logo {
-    display: inline-block;
-
-    & img {
-      height: 1.875rem;
-      display: inline-block;
-      vertical-align: middle;
-    }
-  }
-
-  & .header-main__action {
-    display: inline-block;
-    /*padding: 0.75rem;*/
-    margin-left: auto;
-
-      & .icon-account {
-        padding: 0.75rem;
-
-        &::before {
-        content:"\f007";
-        font-family: var(--ico-font);
+        & .icon-menu::before {
+          content: "\f0c9";
+          font-family: var(--ico-font);
         }
       }
 
-      & .icon-cart {
-        padding: 0.75rem 0 0.75rem 0.75rem;
+      & .header-main__logo {
+        display: inline-block;
 
-        &::before {
-        content:"\f07a";
-        font-family: var(--ico-font);
+        & img {
+          height: 1.875rem;
+          display: inline-block;
+          vertical-align: middle;
+        }
+      }
+
+      & .header-main__actions {
+        display: inline-block;
+        /*padding: 0.75rem;*/
+        margin-left: auto;
+
+        & .header-main__actions-account {
+          display: inline-block;
+          padding: 0.75rem;
+
+          &::before {
+            content: "\f007";
+            font-family: var(--ico-font);
+          }
+        }
+
+        & .header-main__actions-cart {
+          display: inline-block;
+          padding: 0.75rem 0 0.75rem 0.75rem;
+
+          &::before {
+            content: "\f07a";
+            font-family: var(--ico-font);
+          }
+        }
+      }
+
+      & .header-main__search {
+        width: 100%;
+        position: relative;
+
+        & form {
+          
+          & input[type="search"] {
+            display: inline-block;
+            width: 100%;
+          }
+
+          & .search-submit {
+            position: absolute;
+            top: 2px;
+            background-color: var(--color-white);
+            border: none;
+            width: 2.4rem;
+            height: 2.4em;
+            right: 0.75rem;
+            &::before {
+              content: "\f002";
+              font-family: var(--ico-font);
+            }
+          }
         }
       }
     }
-
+  }
 }
