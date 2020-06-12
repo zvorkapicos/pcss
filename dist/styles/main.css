@@ -32,6 +32,8 @@
 
 /* Center main container */
 
+/*Overlay*/
+
 html {
   font-size: 16px;
   line-height: 1.5;
@@ -513,16 +515,14 @@ header .navigation-wrapper .main-menu {
       margin: 4.125rem 0 0 0
     }
 
-header .navigation-wrapper .main-menu .main-menu-item {
-        text-transform: uppercase;
-        border-bottom: 1px solid #eff0f1;
-        border-bottom: 1px solid var(--color-gray);
-        padding: 1.125rem 0
-      }
-
 header .navigation-wrapper .main-menu .main-menu-item a {
+          display: block;
           -webkit-box-shadow: none;
                   box-shadow: none;
+          text-transform: uppercase;
+          border-bottom: 1px solid #eff0f1;
+          border-bottom: 1px solid var(--color-gray);
+          padding: 0.5625rem 0;
         }
 
 header .navigation-wrapper .main-menu .main-menu-item:nth-child(1) a {
@@ -530,47 +530,58 @@ header .navigation-wrapper .main-menu .main-menu-item:nth-child(1) a {
           color: var(--color-red);
         }
 
-header .navigation-wrapper .main-menu .parent {
-        position: relative
-      }
-
-header .navigation-wrapper .main-menu .parent::before {
+header .navigation-wrapper .main-menu .parent a::before {
           content: "\f054";
           font-family: "FontAwesome";
           font-family: var(--ico-font);
           font-size: 0.875rem;
           position: absolute;
-          right: 0;
+          right: 0.75rem;
         }
 
 header .navigation-wrapper .main-menu .parent .main-menu-submenu {
+          position: fixed;
+          top: 4.125rem;
+          z-index: 1;
+          height: 100%;
           list-style-type: none;
           padding: 0;
           text-transform: none;
-          display: none
+          background-color: #fff;
+          background-color: var(--color-white);
+          -webkit-transform: translateX(-100%);
+              -ms-transform: translateX(-100%);
+                  transform: translateX(-100%)
         }
 
-header .navigation-wrapper .main-menu .parent .main-menu-submenu .main-menu-submenu-item {
-            border-bottom: 1px solid #eff0f1;
-            border-bottom: 1px solid var(--color-gray);
-            padding: 1.125rem 0;
-          }
+header .navigation-wrapper .main-menu .parent .main-menu-submenu .main-menu-submenu-item a {
+              border-bottom: 1px solid #eff0f1;
+              border-bottom: 1px solid var(--color-gray);
+              padding: 0.75rem 0;
+              text-transform: none
+            }
+
+header .navigation-wrapper .main-menu .parent .main-menu-submenu .main-menu-submenu-item a::before {
+                content: none;
+              }
 
 header .navigation-wrapper .main-menu .parent .main-menu-submenu .back {
-            text-transform: none;
-            padding-left: 1.125rem;
             font-weight: 400
           }
 
-header .navigation-wrapper .main-menu .parent .main-menu-submenu .back::before {
-              content: "\f053";
-              font-family: "FontAwesome";
-              font-family: var(--ico-font);
-              font-size: 0.875rem;
-              line-height: 1.5rem;
-              position: absolute;
-              left: 0;
+header .navigation-wrapper .main-menu .parent .main-menu-submenu .back a {
+              padding-left: 0.75rem
             }
+
+header .navigation-wrapper .main-menu .parent .main-menu-submenu .back a::before {
+                content: "\f053";
+                font-family: "FontAwesome";
+                font-family: var(--ico-font);
+                font-size: 0.875rem;
+                line-height: 1.5rem;
+                position: absolute;
+                left: 0;
+              }
 
 header .navigation-overlay {
     width: 100%;
@@ -589,15 +600,15 @@ header .navigation-overlay {
             transition-duration: 250ms;
   }
 
+header .overlay-active {
+    opacity: 1;
+    visibility: visible;
+  }
+
 header .navigation-active {
     -webkit-transform: translateX(0);
         -ms-transform: translateX(0);
             transform: translateX(0);
-  }
-
-header .overlay-active {
-    opacity: 1;
-    visibility: visible;
   }
 
 /*# sourceMappingURL=main.css.map */
