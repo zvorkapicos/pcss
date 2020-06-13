@@ -64,7 +64,8 @@ header {
           padding: 0;
           text-transform: none;
           background-color: var(--color-white);
-          transform: translateX(-100%);
+          transform: translateX(-120%);
+          @mixin transition;
 
           & .main-menu-submenu-item {
             & a {
@@ -76,14 +77,11 @@ header {
                 content: none;
               }
             }
-          }
 
-          & .back {
-            font-weight: 400; 
-
-            & a {
+            & .back {
               padding-left: 0.75rem;
-
+              font-weight: 400; 
+              
               &::before {
                 content: "\f053";
                 font-family: var(--ico-font);
@@ -92,14 +90,21 @@ header {
                 position: absolute;
                 left: 0;
               }
+  
             }
           }
+
+        }
+        & .main-menu-submenu__active {
+          transform: translateX(0);
         }
       }
     }
   }
 
-
+  & .navigation-active {
+    transform: translateX(0);
+  }
 
   & .navigation-overlay {
     @mixin overlay;
@@ -109,7 +114,7 @@ header {
     @mixin overlay-active;
   }
 
-  & .navigation-active {
-    transform: translateX(0);
-  }
+  
+
+  
 }
