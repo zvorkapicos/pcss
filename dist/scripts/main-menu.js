@@ -8,9 +8,9 @@ let pageOverlay = document.querySelector(".navigation-overlay");
 
 // Tu otvaram navigaciju
 headerActions.addEventListener("click", function (event) {
-  console.log(event.target);
+  /* console.log(event.target); */
   if (event.target == btnNavigation) {
-    console.log("Navigation");
+    /* console.log("Navigation"); */
     pageOverlay.classList.add("overlay-active");
     navPrimary.classList.add("navigation-active");
   }
@@ -28,25 +28,24 @@ submenus.forEach((item) => {
 // Tu se roštiljaju podizbornici i zatvara navigacija
 let parentMenus = Array.from(document.getElementsByClassName("parent"));
 let goBack = Array.from(document.getElementsByClassName("back"));
+let openedSubmenus = Array.from(document.getElementsByClassName("main-menu-submenu"));
+
 navPrimary.addEventListener("click", function (event) {
-  if (event.target.className == "") {
+  if (event.target.parentElement.classList.contains("parent")) {
     let target = event.target.parentElement;
     target.children[1].classList.add("main-menu-submenu__active");
+
   } else if (event.target.className == "back") {
-    let openedSubmenus = Array.from(
-      document.getElementsByClassName("main-menu-submenu")
-    );
     openedSubmenus.forEach((item) => {
       item.classList.remove("main-menu-submenu__active");
     });
-  } else if (event.target.className == "close") {
+  } 
+  else if (event.target.className == "close") {
     pageOverlay.classList.remove("overlay-active");
     navPrimary.classList.remove("navigation-active");
-    let openedSubmenus = Array.from(
-      document.getElementsByClassName("main-menu-submenu")
-    );
     openedSubmenus.forEach((item) => {
       item.classList.remove("main-menu-submenu__active");
     });
   }
 });
+
