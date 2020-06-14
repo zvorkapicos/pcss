@@ -1,3 +1,5 @@
+const md = window.matchMedia("(max-width:1023px)");
+
 let headerActions = document.querySelector(".header-main__items");
 let btnNavigation = document.querySelector(".header-main__navigation-toggle");
 /* let btnAccount = document.querySelector(".header-main__actions-account");
@@ -6,6 +8,9 @@ let btnCart = document.querySelector(".header-main__actions-cart"); */
 let navPrimary = document.querySelector(".navigation-wrapper");
 let pageOverlay = document.querySelector(".navigation-overlay");
 
+function mainMenu(md) {
+if (md.matches) {
+  
 // Tu otvaram navigaciju
 headerActions.addEventListener("click", function (event) {
   /* console.log(event.target); */
@@ -48,4 +53,7 @@ navPrimary.addEventListener("click", function (event) {
     });
   }
 });
+}
+} 
 
+md.addListener(mainMenu);

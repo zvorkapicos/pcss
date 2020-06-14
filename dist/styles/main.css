@@ -326,8 +326,7 @@ header .content-visible {
   }
 
 header .container .header-main__items {
-      padding-top: .375rem;
-      margin: 0 0.75rem;
+      margin: 0.75rem;
       display: -webkit-box;
       display: -ms-flexbox;
       display: flex;
@@ -338,10 +337,24 @@ header .container .header-main__items {
               align-items: center
     }
 
+@media (min-width: 1024px){
+
+header .container .header-main__items {
+        margin: 1.125rem
+    }
+      }
+
 header .container .header-main__items .header-main__navigation-toggle {
         display: inline-block;
         padding: 0.75rem 0.75rem 0.75rem 0
       }
+
+@media (min-width: 1024px){
+
+header .container .header-main__items .header-main__navigation-toggle {
+          display: none
+      }
+        }
 
 header .container .header-main__items .header-main__navigation-toggle .icon-menu {
           pointer-events: none;
@@ -414,7 +427,7 @@ header .container .header-main__items .header-main__actions .header-main__action
           }
 
 header .container .header-main__items .header-main__search {
-        margin-top: .375rem;
+        margin-top: 0.75rem;
         width: 100%;
         position: relative;
         -webkit-box-ordinal-group: 4;
@@ -496,6 +509,24 @@ header .navigation-wrapper {
             transition-duration: 250ms
   }
 
+@media (min-width: 1024px) {
+
+header .navigation-wrapper {
+      -webkit-transform: translateX(0);
+          -ms-transform: translateX(0);
+              transform: translateX(0);
+      width: 100%;
+      position: static;
+      -webkit-box-shadow: 0 1px 0 #c4122f;
+              box-shadow: 0 1px 0 #c4122f;
+      -webkit-box-shadow: 0 1px 0 var(--color-red);
+              box-shadow: 0 1px 0 var(--color-red);
+      /* background: url(../images/carbon.jpg); */
+      outline: 1px solid red;
+      margin-top: 0.75rem
+  }
+    }
+
 header .navigation-wrapper .close {
       position: absolute;
       right: 0;
@@ -506,6 +537,13 @@ header .navigation-wrapper .close {
       height: 2.625rem;
       padding: 0
     }
+
+@media (min-width: 1024px) {
+
+header .navigation-wrapper .close {
+        display: none
+    }
+      }
 
 header .navigation-wrapper .close::after {
         content: "\f057";
@@ -520,6 +558,27 @@ header .navigation-wrapper .main-menu {
       margin: 4.125rem 0 0 0
     }
 
+@media (min-width: 1024px) {
+
+header .navigation-wrapper .main-menu {
+        display: block;
+        width: 100%;
+        margin: 0;
+        text-align: center
+    }
+      }
+
+@media (min-width: 1024px) {
+
+header .navigation-wrapper .main-menu .main-menu-item {
+          display: inline;
+          padding: 0 1.5rem
+      }
+          header .navigation-wrapper .main-menu .main-menu-item:nth-child(1) {
+            padding: 0 0;
+          }
+        }
+
 header .navigation-wrapper .main-menu .main-menu-item a {
           display: block;
           -webkit-box-shadow: none;
@@ -527,8 +586,17 @@ header .navigation-wrapper .main-menu .main-menu-item a {
           text-transform: uppercase;
           border-bottom: 1px solid #eff0f1;
           border-bottom: 1px solid var(--color-gray);
-          padding: 0.5625rem 0;
+          padding: 0.5625rem 0
         }
+
+@media (min-width: 1024px) {
+
+header .navigation-wrapper .main-menu .main-menu-item a {
+            display: inline-block;
+            position: relative;
+            border: none
+        }
+          }
 
 header .navigation-wrapper .main-menu .main-menu-item:nth-child(1) a {
           color: #c4122f;
@@ -536,13 +604,30 @@ header .navigation-wrapper .main-menu .main-menu-item:nth-child(1) a {
         }
 
 header .navigation-wrapper .main-menu .parent a::before {
-          content: "\f054";
-          font-family: "FontAwesome";
-          font-family: var(--ico-font);
-          font-size: 0.875rem;
-          position: absolute;
-          right: 0.75rem;
-        }
+            content: "\f054";
+            font-family: "FontAwesome";
+            font-family: var(--ico-font);
+            font-size: 0.875rem;
+            position: absolute;
+            right: 0.75rem
+          }
+
+@media (min-width: 1024px) {
+
+header .navigation-wrapper .main-menu .parent a::before {
+              display: none
+          }
+            }
+
+header .navigation-wrapper .main-menu .parent a::after {
+            content: "\f078";
+            font-family: "FontAwesome";
+            font-family: var(--ico-font);
+            font-size: 0.875rem;
+            position: absolute;
+            right: -1.5rem;
+            line-height: 1.5rem;
+          }
 
 header .navigation-wrapper .main-menu .parent .main-menu-submenu {
           position: fixed;
@@ -563,8 +648,14 @@ header .navigation-wrapper .main-menu .parent .main-menu-submenu {
           -webkit-transition-duration: 250ms;
                -o-transition-duration: 250ms;
                   transition-duration: 250ms
-
         }
+
+@media (min-width: 1024px){
+
+header .navigation-wrapper .main-menu .parent .main-menu-submenu {
+            display: none
+        }
+          }
 
 header .navigation-wrapper .main-menu .parent .main-menu-submenu .main-menu-submenu-item a {
               border-bottom: 1px solid #eff0f1;
@@ -580,7 +671,6 @@ header .navigation-wrapper .main-menu .parent .main-menu-submenu .main-menu-subm
 header .navigation-wrapper .main-menu .parent .main-menu-submenu .main-menu-submenu-item .back {
               padding-left: 0.75rem;
               font-weight: 400
-  
             }
 
 header .navigation-wrapper .main-menu .parent .main-menu-submenu .main-menu-submenu-item .back::before {
