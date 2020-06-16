@@ -21,7 +21,7 @@
   --ico-font: "FontAwesome";
 
   /*Utilities*/
-  --shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  --shadow: 0 2px 4px rgba(0, 0, 0, 0.12);
   --color-focus: rgba(29, 161, 242, 0.25);
   --color-overlay: rgba(0, 23, 34, 0.85);
 }
@@ -234,8 +234,8 @@ header .header-top-bar__items .header-top-bar__item .header-top-bar__content {
         background-color: var(--color-white);
         color: #001722;
         color: var(--color-text);
-        -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
-                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.12);
+                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.12);
         -webkit-box-shadow: var(--shadow);
                 box-shadow: var(--shadow);
         position: absolute;
@@ -340,7 +340,7 @@ header .container .header-main__items {
 @media (min-width: 1024px){
 
 header .container .header-main__items {
-        margin: 1.125rem
+        margin: 1.5rem
     }
       }
 
@@ -512,18 +512,18 @@ header .navigation-wrapper {
 @media (min-width: 1024px) {
 
 header .navigation-wrapper {
-      -webkit-transform: translateX(0);
-          -ms-transform: translateX(0);
-              transform: translateX(0);
       width: 100%;
       position: static;
+      -webkit-transform: none;
+          -ms-transform: none;
+              transform: none;
       -webkit-box-shadow: 0 1px 0 #c4122f;
               box-shadow: 0 1px 0 #c4122f;
       -webkit-box-shadow: 0 1px 0 var(--color-red);
               box-shadow: 0 1px 0 var(--color-red);
-      /* background: url(../images/carbon.jpg); */
-      outline: 1px solid red;
-      margin-top: 0.75rem
+      z-index: auto;
+      overflow: visible;
+      position: relative
   }
     }
 
@@ -538,17 +538,17 @@ header .navigation-wrapper .close {
       padding: 0
     }
 
+header .navigation-wrapper .close::after {
+        content: "\f057";
+        font-family: "FontAwesome";
+        font-family: var(--ico-font);
+      }
+
 @media (min-width: 1024px) {
 
 header .navigation-wrapper .close {
         display: none
     }
-      }
-
-header .navigation-wrapper .close::after {
-        content: "\f057";
-        font-family: "FontAwesome";
-        font-family: var(--ico-font);
       }
 
 header .navigation-wrapper .main-menu {
@@ -561,9 +561,9 @@ header .navigation-wrapper .main-menu {
 @media (min-width: 1024px) {
 
 header .navigation-wrapper .main-menu {
-        display: block;
-        width: 100%;
         margin: 0;
+        padding: 0;
+        display: block;
         text-align: center
     }
       }
@@ -571,12 +571,9 @@ header .navigation-wrapper .main-menu {
 @media (min-width: 1024px) {
 
 header .navigation-wrapper .main-menu .main-menu-item {
-          display: inline;
-          padding: 0 1.5rem
+          display: inline-block;
+          margin: 0 1.5rem
       }
-          header .navigation-wrapper .main-menu .main-menu-item:nth-child(1) {
-            padding: 0 0;
-          }
         }
 
 header .navigation-wrapper .main-menu .main-menu-item a {
@@ -593,7 +590,6 @@ header .navigation-wrapper .main-menu .main-menu-item a {
 
 header .navigation-wrapper .main-menu .main-menu-item a {
             display: inline-block;
-            position: relative;
             border: none
         }
           }
@@ -619,15 +615,31 @@ header .navigation-wrapper .main-menu .parent a::before {
           }
             }
 
+@media (min-width: 1024px) {
+
 header .navigation-wrapper .main-menu .parent a::after {
-            content: "\f078";
-            font-family: "FontAwesome";
-            font-family: var(--ico-font);
-            font-size: 0.875rem;
-            position: absolute;
-            right: -1.5rem;
-            line-height: 1.5rem;
+              position: static;
+              display: inline-block;
+              content: "\f078";
+              font-family: "FontAwesome";
+              font-family: var(--ico-font);
+              font-size: 0.875rem;
+              line-height: 1.5rem;
+              margin-left: 0.375rem
           }
+            }
+
+header .navigation-wrapper .main-menu .parent a:hover::after {
+              -webkit-transform: rotate(-180deg);
+                  -ms-transform: rotate(-180deg);
+                      transform: rotate(-180deg);
+              -webkit-transition-timing-function: ease-out;
+                   -o-transition-timing-function: ease-out;
+                      transition-timing-function: ease-out;
+              -webkit-transition-duration: 250ms;
+                   -o-transition-duration: 250ms;
+                      transition-duration: 250ms;
+            }
 
 header .navigation-wrapper .main-menu .parent .main-menu-submenu {
           position: fixed;
@@ -650,12 +662,38 @@ header .navigation-wrapper .main-menu .parent .main-menu-submenu {
                   transition-duration: 250ms
         }
 
-@media (min-width: 1024px){
+@media (min-width: 1024px) {
 
 header .navigation-wrapper .main-menu .parent .main-menu-submenu {
+            position: absolute;
+            left: 0;
+            top: 0;
+            -webkit-transform: none;
+                -ms-transform: none;
+                    transform: none;
+            height: auto;
+            text-align: left;
+            top: calc(100% + 1px);
+            padding: 0.75rem 35%;
+            -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.12);
+                    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.12);
+            -webkit-box-shadow: var(--shadow);
+                    box-shadow: var(--shadow);
+            display: block;
+            width: 100%;
+            -webkit-column-count: 3;
+               -moz-column-count: 3;
+                    column-count: 3;
             display: none
         }
           }
+
+@media (min-width: 1024px) {
+
+header .navigation-wrapper .main-menu .parent .main-menu-submenu .main-menu-submenu-item {
+              display: block
+          }
+            }
 
 header .navigation-wrapper .main-menu .parent .main-menu-submenu .main-menu-submenu-item a {
               border-bottom: 1px solid #eff0f1;
@@ -664,14 +702,35 @@ header .navigation-wrapper .main-menu .parent .main-menu-submenu .main-menu-subm
               text-transform: none
             }
 
+@media (min-width: 1024px) {
+
+header .navigation-wrapper .main-menu .parent .main-menu-submenu .main-menu-submenu-item a {
+                border: none
+            }
+              }
+
 header .navigation-wrapper .main-menu .parent .main-menu-submenu .main-menu-submenu-item a::before {
                 content: none;
               }
+
+@media (min-width: 1024px) {
+
+header .navigation-wrapper .main-menu .parent .main-menu-submenu .main-menu-submenu-item a::after {
+                  display: none
+              }
+                }
 
 header .navigation-wrapper .main-menu .parent .main-menu-submenu .main-menu-submenu-item .back {
               padding-left: 0.75rem;
               font-weight: 400
             }
+
+@media (min-width: 1024px) {
+
+header .navigation-wrapper .main-menu .parent .main-menu-submenu .main-menu-submenu-item .back {
+                display: none
+            }
+              }
 
 header .navigation-wrapper .main-menu .parent .main-menu-submenu .main-menu-submenu-item .back::before {
                 content: "\f053";
@@ -687,6 +746,12 @@ header .navigation-wrapper .main-menu .parent .main-menu-submenu__active {
           -webkit-transform: translateX(0);
               -ms-transform: translateX(0);
                   transform: translateX(0);
+        }
+
+@media (min-width: 1024px) {
+          header .navigation-wrapper .main-menu .parent:hover > .main-menu-submenu {
+            display: block;
+          }
         }
 
 header .navigation-active {
