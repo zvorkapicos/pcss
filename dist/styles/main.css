@@ -523,7 +523,8 @@ header .navigation-wrapper {
               box-shadow: 0 1px 0 var(--color-red);
       z-index: auto;
       overflow: visible;
-      position: relative
+      position: relative;
+      background: url("../images/carbon.jpg")
   }
     }
 
@@ -590,7 +591,9 @@ header .navigation-wrapper .main-menu .main-menu-item a {
 
 header .navigation-wrapper .main-menu .main-menu-item a {
             display: inline-block;
-            border: none
+            border: none;
+            color: #fff;
+            color: var(--color-white)
         }
           }
 
@@ -629,23 +632,10 @@ header .navigation-wrapper .main-menu .parent a::after {
           }
             }
 
-header .navigation-wrapper .main-menu .parent a:hover::after {
-              -webkit-transform: rotate(-180deg);
-                  -ms-transform: rotate(-180deg);
-                      transform: rotate(-180deg);
-              -webkit-transition-timing-function: ease-out;
-                   -o-transition-timing-function: ease-out;
-                      transition-timing-function: ease-out;
-              -webkit-transition-duration: 250ms;
-                   -o-transition-duration: 250ms;
-                      transition-duration: 250ms;
-            }
-
 header .navigation-wrapper .main-menu .parent .main-menu-submenu {
           position: fixed;
           top: 4.125rem;
           z-index: 1;
-          height: 100%;
           list-style-type: none;
           padding: 0;
           text-transform: none;
@@ -654,6 +644,8 @@ header .navigation-wrapper .main-menu .parent .main-menu-submenu {
           -webkit-transform: translateX(-120%);
               -ms-transform: translateX(-120%);
                   transform: translateX(-120%);
+          width: 97%;
+          overflow: hidden;
           -webkit-transition-timing-function: ease-out;
                -o-transition-timing-function: ease-out;
                   transition-timing-function: ease-out;
@@ -705,7 +697,9 @@ header .navigation-wrapper .main-menu .parent .main-menu-submenu .main-menu-subm
 @media (min-width: 1024px) {
 
 header .navigation-wrapper .main-menu .parent .main-menu-submenu .main-menu-submenu-item a {
-                border: none
+                border: none;
+                color: #001722;
+                color: var(--color-text)
             }
               }
 
@@ -749,6 +743,17 @@ header .navigation-wrapper .main-menu .parent .main-menu-submenu__active {
         }
 
 @media (min-width: 1024px) {
+          header .navigation-wrapper .main-menu .parent:hover > a:after {
+            -webkit-transform: rotate(180deg);
+                -ms-transform: rotate(180deg);
+                    transform: rotate(180deg);
+            -webkit-transition-timing-function: ease-out;
+                 -o-transition-timing-function: ease-out;
+                    transition-timing-function: ease-out;
+            -webkit-transition-duration: 250ms;
+                 -o-transition-duration: 250ms;
+                    transition-duration: 250ms;
+          }
           header .navigation-wrapper .main-menu .parent:hover > .main-menu-submenu {
             display: block;
           }
@@ -774,8 +779,15 @@ header .navigation-overlay {
             transition-timing-function: ease-out;
     -webkit-transition-duration: 250ms;
          -o-transition-duration: 250ms;
-            transition-duration: 250ms;
+            transition-duration: 250ms
   }
+
+@media (min-width: 1024px) {
+
+header .navigation-overlay {
+      display: none
+  }
+    }
 
 header .overlay-active {
     opacity: 1;
