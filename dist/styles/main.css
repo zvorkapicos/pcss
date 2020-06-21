@@ -562,9 +562,9 @@ header .minicart {
     height: 100%;
     padding: 0.75rem;
     z-index: 1;
-    -webkit-transform: translateX(0);
-        -ms-transform: translateX(0);
-            transform: translateX(0);
+    -webkit-transform: translateX(-100%);
+        -ms-transform: translateX(-100%);
+            transform: translateX(-100%);
     font-size: 0.875rem;
     -webkit-transition-timing-function: ease-out;
          -o-transition-timing-function: ease-out;
@@ -572,19 +572,23 @@ header .minicart {
     -webkit-transition-duration: 250ms;
          -o-transition-duration: 250ms;
             transition-duration: 250ms
-    /*     display: none; */
   }
 
 header .minicart .minicart-top {
       border-bottom: 1px solid #eff0f1;
       border-bottom: 1px solid var(--color-gray);
-      padding-bottom: 0.375rem
+      padding-bottom: 0.375rem;
+      margin-top: 0.75rem
     }
 
 header .minicart .minicart-top button {
         position: absolute;
         right: 0.75rem;
-        font-size: 1rem
+        font-size: 1rem;
+        width: 2.625rem;
+        height: 2.625rem;
+        top: 0.75rem;
+        padding: 0
       }
 
 header .minicart .minicart-top button::after {
@@ -592,6 +596,140 @@ header .minicart .minicart-top button::after {
           font-family: "FontAwesome";
           font-family: var(--ico-font);
         }
+
+header .minicart .minicart-items {
+      list-style-type: none;
+      padding: 0;
+      margin: 0
+    }
+
+header .minicart .minicart-items .minicart-item {
+        padding: 0.75rem 0;
+        border-bottom: 1px solid #eff0f1;
+        border-bottom: 1px solid var(--color-gray)
+      }
+
+header .minicart .minicart-items .minicart-item a {
+          -webkit-box-shadow: none;
+                  box-shadow: none;
+        }
+
+header .minicart .minicart-items .minicart-item .product-wrapper {
+          display: -webkit-box;
+          display: -ms-flexbox;
+          display: flex
+        }
+
+header .minicart .minicart-items .minicart-item .product-wrapper .product-image {
+            display: inline-block;
+            margin-right: 0.75rem
+          }
+
+header .minicart .minicart-items .minicart-item .product-wrapper .product-image img {
+              height: 4.5rem;
+              border: 1px solid #eff0f1;
+              border: 1px solid var(--color-gray);
+            }
+
+header .minicart .minicart-items .minicart-item .product-wrapper .product-details {
+            width: 100%
+          }
+
+@media (min-width: 768px) {
+
+header .minicart .minicart-items .minicart-item .product-wrapper .product-details {
+                display: -webkit-box;
+                display: -ms-flexbox;
+                display: flex
+          }
+            }
+
+header .minicart .minicart-items .minicart-item .product-wrapper .product-details .product-info {
+              margin-bottom: 0.75rem
+            }
+
+header .minicart .minicart-items .minicart-item .product-wrapper .product-details .product-info span {
+                display: block;
+              }
+
+header .minicart .minicart-items .minicart-item .product-wrapper .product-details .product-info .product-name {
+                font-weight: 700;
+              }
+
+header .minicart .minicart-items .minicart-item .product-wrapper .product-details .product-info .product-sku {
+                font-size: 0.75rem;
+              }
+
+header .minicart .minicart-items .minicart-item .product-wrapper .product-details .product-info .product-price {
+                margin-top: 0.375rem;
+                font-weight: 700;
+              }
+
+header .minicart .minicart-items .minicart-item .product-wrapper .product-actions {
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-align: center;
+                -ms-flex-align: center;
+                    align-items: center
+          }
+
+@media (min-width: 768px) {
+
+header .minicart .minicart-items .minicart-item .product-wrapper .product-actions {
+                margin-left: auto;
+                border-left: 1px solid #eff0f1;
+                border-left: 1px solid var(--color-gray);
+                padding-left: 0.75rem
+          }
+            }
+
+header .minicart .minicart-items .minicart-item .product-wrapper .product-actions .product-qty .qty {
+                margin-right: 0.375rem;
+              }
+
+header .minicart .minicart-items .minicart-item .product-wrapper .product-actions .product-qty input {
+                width: 2.625rem;
+                height: 2.625rem;
+                text-align: center
+              }
+
+header .minicart .minicart-items .minicart-item .product-wrapper .product-actions .product-qty input::-webkit-inner-spin-button {
+                  -webkit-appearance: none;
+                  margin: 0;
+                }
+
+header .minicart .minicart-items .minicart-item .product-wrapper .product-actions .product-remove {
+              margin-left: auto
+            }
+
+@media (min-width: 768px) {
+
+header .minicart .minicart-items .minicart-item .product-wrapper .product-actions .product-remove {
+                margin-left: 0.75rem
+            }
+            }
+
+header .minicart .minicart-items .minicart-item .product-wrapper .product-actions .product-remove .remove a {
+                  -webkit-box-shadow: 0 1px 0 #c4122f;
+                          box-shadow: 0 1px 0 #c4122f;
+                  -webkit-box-shadow: 0 1px 0 var(--color-red);
+                          box-shadow: 0 1px 0 var(--color-red)
+                }
+
+header .minicart .minicart-items .minicart-item .product-wrapper .product-actions .product-remove .remove a::before {
+                    content: "\f2ed";
+                    font-family: "FontAwesome";
+                    font-family: var(--ico-font);
+                    display: inline-block;
+                    margin-right: 0.375rem;
+                  }
+
+header .minicart-active {
+    -webkit-transform: translateX(0);
+        -ms-transform: translateX(0);
+            transform: translateX(0);
+  }
 
 header .navigation-wrapper {
     background-color: #fff;

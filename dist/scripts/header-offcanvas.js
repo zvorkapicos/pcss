@@ -40,6 +40,7 @@ navPrimary.addEventListener("click", function (event) {
 
 //
 let myAccount = document.querySelector(".my-account");
+
 // Otvaranje my accounta
 btnAccount.addEventListener("click", function (event) {
   if (event.target == btnAccount) {
@@ -51,5 +52,22 @@ btnAccount.addEventListener("click", function (event) {
 document.addEventListener("click", function (event) {
   if (event.target !== btnAccount) {
     myAccount.classList.remove("my-account-active");
+  }
+});
+
+// Otvaranje minicarta
+let miniCart = document.querySelector(".minicart");
+btnCart.addEventListener("click", function (event) {
+  if (event.target == btnCart) {
+    miniCart.classList.toggle("minicart-active");
+    pageOverlay.classList.add("overlay-active");
+
+    let miniCartClose = document.querySelector(".minicart .close");
+    miniCartClose.addEventListener("click", function (event) {
+      if (event.target == miniCartClose) {
+        miniCart.classList.remove("minicart-active");
+        pageOverlay.classList.remove("overlay-active");
+      }
+    });
   }
 });
