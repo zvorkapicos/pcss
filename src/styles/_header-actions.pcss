@@ -8,6 +8,7 @@ header {
     top: 2.5rem;
     z-index: 1;
     display: none;
+    font-size: 0.875rem;
 
     @media (--md) {
         width: 20rem;
@@ -71,12 +72,17 @@ header {
 
     @media (--md) {
         width: 60%;
+        padding: 1.5rem;
     }
 
     & .minicart-top {
       border-bottom: 1px solid var(--color-gray);
       padding-bottom: 0.375rem;
       margin-top: 0.75rem;
+
+      @media (--md) {
+        margin-top: 0;
+      }
 
       & button {
         position: absolute;
@@ -89,6 +95,10 @@ header {
         &::after {
           content: "\f057";
           font-family: var(--ico-font);
+        }
+
+        @media (--md) {
+          right: 0.75rem;
         }
       }
     }
@@ -177,6 +187,7 @@ header {
 
             & .product-remove {
               margin-left: auto;
+              font-size: 0.75rem;
 
               @media (--smd) {
                 margin-left: 0.75rem;

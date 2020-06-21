@@ -506,7 +506,8 @@ header .my-account {
     position: absolute;
     top: 2.5rem;
     z-index: 1;
-    display: none
+    display: none;
+    font-size: 0.875rem
   }
 
 @media (min-width: 1024px) {
@@ -585,7 +586,8 @@ header .minicart {
 @media (min-width: 1024px) {
 
 header .minicart {
-        width: 60%
+        width: 60%;
+        padding: 1.5rem
   }
     }
 
@@ -595,6 +597,13 @@ header .minicart .minicart-top {
       padding-bottom: 0.375rem;
       margin-top: 0.75rem
     }
+
+@media (min-width: 1024px) {
+
+header .minicart .minicart-top {
+        margin-top: 0
+    }
+      }
 
 header .minicart .minicart-top button {
         position: absolute;
@@ -610,6 +619,13 @@ header .minicart .minicart-top button::after {
           content: "\f057";
           font-family: "FontAwesome";
           font-family: var(--ico-font);
+        }
+
+@media (min-width: 1024px) {
+
+header .minicart .minicart-top button {
+          right: 0.75rem
+      }
         }
 
 header .minicart .minicart-items {
@@ -723,7 +739,8 @@ header .minicart .minicart-items .minicart-item .product-wrapper .product-action
                 }
 
 header .minicart .minicart-items .minicart-item .product-wrapper .product-actions .product-remove {
-              margin-left: auto
+              margin-left: auto;
+              font-size: 0.75rem
             }
 
 @media (min-width: 768px) {
@@ -838,7 +855,7 @@ header .navigation-wrapper .main-menu {
 
 header .navigation-wrapper .main-menu .main-menu-item {
           display: inline-block;
-          margin: 0 1.5rem
+          margin: 0 -0.1875rem
       }
         }
 
@@ -858,14 +875,45 @@ header .navigation-wrapper .main-menu .main-menu-item a {
             display: inline-block;
             border: none;
             color: #fff;
-            color: var(--color-white)
+            color: var(--color-white);
+            position: relative;
+            z-index: 0;
+            padding-left: 1.5rem;
+            padding-right: 1.5rem
         }
           }
 
-header .navigation-wrapper .main-menu .main-menu-item:nth-child(1) a {
-          color: #c4122f;
-          color: var(--color-red);
-        }
+@media (min-width: 1024px) {
+
+header .navigation-wrapper .main-menu .main-menu-item a::before {
+              content: "";
+              position: absolute;
+              left: 0;
+              right: 0;
+              z-index: 0;
+              width: 100%;
+              height: 100%;
+              background-color: transparent;
+              top: 0;
+              -webkit-transform: skewX(30deg);
+                  -ms-transform: skewX(30deg);
+                      transform: skewX(30deg);
+              z-index: -1;
+              -webkit-transition-timing-function: ease-out;
+                   -o-transition-timing-function: ease-out;
+                      transition-timing-function: ease-out;
+              -webkit-transition-duration: 250ms;
+                   -o-transition-duration: 250ms;
+                      transition-duration: 250ms
+          }
+            }
+
+@media (min-width: 1024px) {
+            header .navigation-wrapper .main-menu .main-menu-item a:hover::before {
+              background-color: #c4122f;
+              background-color: var(--color-red);
+            }
+          }
 
 header .navigation-wrapper .main-menu .parent a::before {
             content: "\f054";
@@ -879,7 +927,7 @@ header .navigation-wrapper .main-menu .parent a::before {
 @media (min-width: 1024px) {
 
 header .navigation-wrapper .main-menu .parent a::before {
-              display: none
+              content: ""
           }
             }
 
@@ -968,6 +1016,13 @@ header .navigation-wrapper .main-menu .parent .main-menu-submenu .main-menu-subm
                 padding: 0;
                 margin: 0.75rem
             }
+
+                header .navigation-wrapper .main-menu .parent .main-menu-submenu .main-menu-submenu-item a:hover {
+                  -webkit-box-shadow: 0 1px 0 #c4122f;
+                          box-shadow: 0 1px 0 #c4122f;
+                  -webkit-box-shadow: 0 1px 0 var(--color-red);
+                          box-shadow: 0 1px 0 var(--color-red);
+                }
               }
 
 header .navigation-wrapper .main-menu .parent .main-menu-submenu .main-menu-submenu-item a::before {
