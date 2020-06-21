@@ -80,7 +80,7 @@ header {
 
       & button {
         position: absolute;
-        right: 0.75rem;
+        right: 0;
         font-size: 1rem;
         width: 2.625rem;
         height: 2.625rem;
@@ -132,6 +132,11 @@ header {
 
               & .product-name {
                 font-weight: 700;
+                margin-bottom: 0.375rem;
+
+                & a {
+                  box-shadow: 0 1px 0 var(--color-red);
+                }
               }
 
               & .product-sku {
