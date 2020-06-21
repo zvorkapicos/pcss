@@ -509,6 +509,14 @@ header .my-account {
     display: none
   }
 
+@media (min-width: 1024px) {
+
+header .my-account {
+        width: 20rem;
+        right: 0
+  }
+    }
+
 header .my-account::before {
       position: absolute;
       top: -0.75rem;
@@ -573,6 +581,13 @@ header .minicart {
          -o-transition-duration: 250ms;
             transition-duration: 250ms
   }
+
+@media (min-width: 1024px) {
+
+header .minicart {
+        width: 60%
+  }
+    }
 
 header .minicart .minicart-top {
       border-bottom: 1px solid #eff0f1;
@@ -726,9 +741,9 @@ header .minicart .minicart-items .minicart-item .product-wrapper .product-action
                   }
 
 header .minicart-active {
-    -webkit-transform: translateX(0);
-        -ms-transform: translateX(0);
-            transform: translateX(0);
+     -webkit-transform: translateX(0);
+         -ms-transform: translateX(0);
+             transform: translateX(0);
   }
 
 header .navigation-wrapper {
@@ -1025,15 +1040,8 @@ header .navigation-overlay {
             transition-timing-function: ease-out;
     -webkit-transition-duration: 250ms;
          -o-transition-duration: 250ms;
-            transition-duration: 250ms
+            transition-duration: 250ms;
   }
-
-@media (min-width: 1024px) {
-
-header .navigation-overlay {
-      display: none
-  }
-    }
 
 header .overlay-active {
     opacity: 1;

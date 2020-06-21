@@ -9,6 +9,11 @@ header {
     z-index: 1;
     display: none;
 
+    @media (--md) {
+        width: 20rem;
+        right: 0;
+    }
+
     &::before {
       position: absolute;
       top: -0.75rem;
@@ -63,6 +68,10 @@ header {
     transform: translateX(-100%);
     font-size: 0.875rem;
     @mixin transition;
+
+    @media (--md) {
+        width: 60%;
+    }
 
     & .minicart-top {
       border-bottom: 1px solid var(--color-gray);
@@ -186,6 +195,6 @@ header {
   }
 
   & .minicart-active {
-    transform: translateX(0);
+     transform: translateX(0);
   }
 }
