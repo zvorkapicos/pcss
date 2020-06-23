@@ -92,14 +92,6 @@ header {
               @mixin transition;
             }
           }
-
-          &:hover {
-            @media (--md) {
-            &::before {
-              background-color: var(--color-red);
-            }
-          }
-          }
         }
       }
 
@@ -220,6 +212,10 @@ header {
           &:hover > a:after {
             transform: rotate(180deg);
             @mixin transition;
+          }
+
+          &:hover > a:before {
+            background-color: var(--color-red);
           }
           &:hover > .main-menu-submenu {
             display: block;

@@ -1,10 +1,15 @@
 .container {
   max-width: 1200px;
   margin: auto;
+  padding: 0 0.75rem;
 
-  @media (--md) {
+  @media (--smd) {
     display: block;
     padding: 0 1.5rem;
+  }
+
+  @media (--xlg) {
+    padding: 0;
   }
 }
 
@@ -12,7 +17,7 @@
   display: flex;
   flex-wrap: wrap;
 
-  @media (--md) {
+  @media (--smd) {
     flex-wrap: nowrap;
   }
 
@@ -20,7 +25,7 @@
     width: 100%;
   }
 
-  @media (--md) {
+  @media (--smd) {
     & .col {
       margin-right: 1.5rem;
       &:last-child {
