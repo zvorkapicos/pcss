@@ -1252,7 +1252,7 @@ header .overlay-active {
   }
 
 .page-main .row {
-      margin-bottom: 0.75rem
+    margin-bottom: 0.75rem
   }
 
 .page-main .row .mmy-container {
@@ -1303,8 +1303,11 @@ header .overlay-active {
       }
         }
 
-.page-main .row-2 .col {
+.page-main .row-2 {
+    margin-bottom: 0.75rem
+  }
 
+.page-main .row-2 .col {
     }
 
 .page-main .row-2 .shopbymake ul {
@@ -1318,17 +1321,47 @@ header .overlay-active {
             flex-wrap: wrap
       }
 
+@media (min-width: 1024px) {
+
+.page-main .row-2 .shopbymake ul {
+          -webkit-box-pack: justify;
+              -ms-flex-pack: justify;
+                  justify-content: space-between
+      }
+          .page-main .row-2 .shopbymake ul::after {
+            content: "";
+            -ms-flex-preferred-size: 32%;
+                flex-basis: 32%;
+          }
+        }
+
 .page-main .row-2 .shopbymake ul li {
           width: 50%;
           position: relative;
           margin-right: 0.75rem;
-          -ms-flex-preferred-size:48%;
-              flex-basis:48%
+          -ms-flex-preferred-size: 48%;
+              flex-basis: 48%
         }
 
-.page-main .row-2 .shopbymake ul li:nth-child(even) {
-            margin-right: 0;
+@media (min-width: 1024px) {
+
+.page-main .row-2 .shopbymake ul li {
+            -ms-flex-preferred-size: 32%;
+                flex-basis: 32%;
+            margin-right: 0
+        }
           }
+
+.page-main .row-2 .shopbymake ul li:nth-child(even) {
+            margin-right: 0
+          }
+
+@media (min-width: 1024px) {
+
+.page-main .row-2 .shopbymake ul li:nth-child(even) {
+              margin-right: 0
+          }
+            }
 
 .page-main .row-2 .shopbymake ul li::before {
             content: "";
@@ -1345,20 +1378,26 @@ header .overlay-active {
             -webkit-box-shadow: none;
                     box-shadow: none;
             padding: 0.75rem 1.5rem
-
           }
 
 .page-main .row-2 .shopbymake ul li a img {
               display: block;
-              width: 100%;
+              max-width: 75%;
+              margin: auto
             }
+
+@media (min-width: 768px) {
+
+.page-main .row-2 .shopbymake ul li a img {
+                max-width: 50%
+            }
+              }
 
 .page-main .row-2 .shopbymake ul li h3 {
             font-size: 1rem;
             line-height: 1.5rem;
             text-transform: uppercase;
             display: inline-block
-            
           }
 
 .page-main .row-2 .shopbymake ul li h3 a {
@@ -1368,5 +1407,33 @@ header .overlay-active {
               -webkit-box-shadow: 0 1px 0 var(--color-red);
                       box-shadow: 0 1px 0 var(--color-red);
             }
+
+.page-main .row-3 .col {
+      text-align: center
+    }
+
+.page-main .row-3 .col h2 {
+        margin-bottom: 0.75rem;
+      }
+
+.page-main .row-3 .col a {
+        
+        display: -webkit-inline-box;
+        
+        display: -ms-inline-flexbox;
+        
+        display: inline-flex;
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center
+      }
+
+.page-main .row-3 .col a::after {
+          content:"\f054";
+          font-family: "FontAwesome";
+          font-family: var(--ico-font);
+          font-size: 0.75rem;
+          margin-left: 0.375rem;
+        }
 
 /*# sourceMappingURL=main.css.map */
